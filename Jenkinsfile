@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def gradleHome = tool name: 'Gradle', type: 'Gradle'
+                    def gradleHome = tool name: 'Gradle 8.8', type: 'Gradle'
                     def gradleCMD = "${gradleHome}/bin/gradle"
                     sh "${gradleCMD} jib"
                 }
