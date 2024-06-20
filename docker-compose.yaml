@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  node-docker-app:
-    image: localhost:8082/repojenkins/node-docker-app:latest
+  simple-node-app:
+    image: localhost:8082/repojenkins/simple-node-app:latest
     ports:
       - "8080:8080"
     environment:
