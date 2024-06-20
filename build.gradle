@@ -17,7 +17,7 @@ jib {
         image = 'adoptopenjdk:11-jre-hotspot' // Image de base pour Jib
     }
     to {
-        image = 'localhost:8082/repojenkins/node-docker-app:latest' // Image de destination pour Jib
+        image = 'localhost:8082/repojenkins/simple-node-app:latest' // Image de destination pour Jib
         tags = ['latest']
         auth {
             username = project.findProperty('nexusUsername') ?: System.getenv('NEXUS_USERNAME')
