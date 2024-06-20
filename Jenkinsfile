@@ -14,7 +14,8 @@ pipeline {
             steps {
                 script {
                     def gradleHome = tool name: 'Gradle', type: 'Gradle'
-                    sh "${gradleHome}/bin/gradle jib"
+                    def gradleCMD = "${gradleHome}/bin/gradle"
+                    sh "${gradleCMD} jib"
                 }
             }
         }
