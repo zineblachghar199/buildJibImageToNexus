@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  node-docker-app:
+    image: localhost:8082/repojenkins/node-docker-app:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+    restart: always
