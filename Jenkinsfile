@@ -7,15 +7,17 @@ pipeline {
         NEXUS_URL = 'http://localhost:8082' // URL de votre Nexus
         NEXUS_REPO = 'repojenkins' // Nom de votre repository Nexus
         NEXUS_CREDENTIALS_ID = 'nexus' // ID des credentials Nexus dans Jenkins
+        GRADLE_HOME = tool 'Gradle 8.7'
+        PATH = "$GRADLE_HOME/bin:$PATH"
     }
 
     stages {
         stage('Build') {
             steps {
                 script {
-                    def gradleHome = tool name: 'Gradle 8.8', type: 'Gradle'
+                    def gradleHome = tool name: 'Gradle 8.7', type: 'gradle'
                     def gradleCMD = "${gradleHome}/bin/gradle"
-                    sh "${gradleCMD} jib"
+                    sh "${gradleCMD} build"
                 }
             }
         }
